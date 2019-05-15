@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user.try(:authenicate, params[:password])
       session[:user_id] = user.id
-      redirect_to 'welcome/index'
+      redirect_to welcome_index_path
     else
       redirect_to new_session_path
     end
