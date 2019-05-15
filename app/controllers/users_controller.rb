@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    if User.create(user_params)
+      redirect_to 'welcome/index'
+    else
+      render :new
+    end  
   end
 
   private
