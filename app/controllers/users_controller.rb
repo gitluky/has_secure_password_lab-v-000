@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to 'welcome/index'
     else
-      redirect new_user_path
+      redirect_to new_user_path
     end
   end
 
