@@ -5,16 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
-    if params[:user][:password] != params[:user][:password_confirmation]
-      redirect_to new_user_path
-    end
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
       redirect_to 'welcome/index'
     else
-      redirect_to new_user_path
+      render :new
     end
   end
 
