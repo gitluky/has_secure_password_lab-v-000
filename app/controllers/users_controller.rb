@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to 'welcome/index'
     else
       render :new
-    end  
+    end
   end
 
   private
