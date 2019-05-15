@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     if params[:user][:password] != params[:user][:password_confirmation]
       redirect_to new_user_path
     end
